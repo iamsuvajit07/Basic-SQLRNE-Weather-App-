@@ -1,0 +1,22 @@
+CREATE TABLE searches (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  city VARCHAR(255),
+  temperature DECIMAL(5, 2),
+  description VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
+
+
+
+api= 533febb0dc21a379e61b62ae5f36796b
